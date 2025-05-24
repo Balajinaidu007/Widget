@@ -12,3 +12,34 @@
 
 </body>
 </html>
+<?xml version="1.0" encoding="utf-8"?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+<head>
+    <title>My Widget</title>
+
+    <!-- Load RequireJS -->
+    <script type="text/javascript" src="https://webapps-cdn.dsone.3ds.com/webapps/require.js"></script>
+
+    <script type="text/javascript">
+        // RequireJS config
+        require.config({
+            paths: {
+                'DS/MyWidget/scripts/MyWidget': 'DS/MyWidget/scripts/MyWidget',
+                'DS/DataDragAndDrop/DataDragAndDrop': 'DS/DataDragAndDrop/DataDragAndDrop',
+                'DS/PlatformAPI/PlatformAPI': 'DS/PlatformAPI/PlatformAPI',
+                'DS/WAFData/WAFData': 'DS/WAFData/WAFData'
+            }
+        });
+
+        // Load and initialize widget
+        require(["DS/MyWidget/scripts/MyWidget"], function (myWidget) {
+            // No need to call onLoad here if it's already registered via widget.addEvent in the module
+           widget.addEvent("onLoad",mywidget.onLoadWidget);
+		   console.log("Widget loaded");
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
